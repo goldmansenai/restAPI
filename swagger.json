@@ -1,0 +1,285 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "API para criação de post para um blog",
+		"description": "API para criação de um blog",
+		"termsOfService": "http://localhost:3001/terms",
+		"contact": {
+			"email": "vsgeniselli@gmail.com"
+		},
+		"version": "1.0.0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:3001",
+			"description": "API de teste"
+		}
+	],
+	"paths": {
+		"/posts": {
+			"post": {
+				"summary": "Criação de posts",
+				"description": "Rota responsável por criar um novo post",
+				"tags": [
+					"Posts"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#components/schemas/Posts"
+							},
+							"examples": {
+								"post": {
+									"value": {
+										"tituloPost": "Acontecimento atual no mundo",
+										"textoPost": "Acontecimento de xx/yy/zzzz sobre fulano"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#components/schemas/Posts"
+								}
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"description": "Busca de todos os posts",
+				"summary": "Busca de todos os posts",
+				"tags": [
+					"Posts"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#components/schemas/Posts"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/posts/especifico/{postId}": {
+			"get": {
+				"description": "Busca de um post específico",
+				"summary": "Post específico",
+				"tags": [
+					"Posts"
+				],
+				"parameters": [
+					{
+						"name": "postId",
+						"in": "path",
+						"description": "Id para a busca do produto",
+						"required": true
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#components/schemas/Posts"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"description": "Atualização de um post específico",
+				"summary": "Atualizar post específico",
+				"tags": [
+					"Posts"
+				],
+				"parameters": [
+					{
+						"name": "postId",
+						"in": "path",
+						"description": "Id para a busca do produto",
+						"required": true
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#components/schemas/Posts"
+							},
+							"examples": {
+								"post": {
+									"value": {
+										"tituloPost": "Acontecimento atual no mundo"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#components/schemas/Posts"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"description": "Deletar um post específico",
+				"summary": "Deletar post específico",
+				"tags": [
+					"Posts"
+				],
+				"parameters": [
+					{
+						"name": "postId",
+						"in": "path",
+						"description": "Id para deletar o post",
+						"required": true
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#components/schemas/Posts"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auth/register": {
+			"post": {
+				"summary": "Registro de um usuário",
+				"description": "Rota responsável por criar um novo usuário",
+				"tags": [
+					"Users"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#components/schemas/Users"
+							},
+							"examples": {
+								"post": {
+									"value": {
+										"username": "zezinho",
+										"password": "123456"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#components/schemas/Users"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auth/login": {
+			"post": {
+				"summary": "Login de um usuário",
+				"description": "Rota responsável por logar um usuário",
+				"tags": [
+					"Users"
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#components/schemas/Users"
+							},
+							"examples": {
+								"post": {
+									"value": {
+										"username": "zezinho",
+										"password": "123456"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"$ref": "#components/schemas/Users"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Posts": {
+				"type": "object",
+				"properties": {
+					"tituloPost": {
+						"type": "string"
+					},
+					"textoPost": {
+						"type": "string"
+					}
+				}
+			},
+			"Users": {
+				"type": "object",
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}
