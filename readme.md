@@ -17,14 +17,14 @@ O projeto em questão utilizas as seguintes dependências e tecnologias:
 * <img src="https://img.shields.io/badge/Tecnologia-MySQL Workbench-important?style=for-the-badge"/>
 * <img src="https://img.shields.io/badge/Dependência-Express-blue?style=for-the-badge"/>
 * <img src="https://img.shields.io/badge/Dependência-Cors-blue?style=for-the-badge"/>
-* <img src="https://img.shields.io/badge/Dependência-Body-Parser-blue?style=for-the-badge"/>
+* <img src="https://img.shields.io/badge/Dependência-BodyParser-blue?style=for-the-badge"/>
 * <img src="https://img.shields.io/badge/Dependência-JWT-blue?style=for-the-badge"/>
 * <img src="https://img.shields.io/badge/Dependência-MySQL2-blue?style=for-the-badge"/>
 * <img src="https://img.shields.io/badge/Dependência-Nodemon-blue?style=for-the-badge"/>
 * <img src="https://img.shields.io/badge/Dependência-Sequelize-blue?style=for-the-badge"/>
-* <img src="https://img.shields.io/badge/Dependência-Sequelize-cli-blue?style=for-the-badge"/>
-* <img src="https://img.shields.io/badge/Dependência-Swagger-jsdoc-blue?style=for-the-badge"/>
-* <img src="https://img.shields.io/badge/Dependência-Swagger-ui-express-blue?style=for-the-badge"/>
+* <img src="https://img.shields.io/badge/Dependência-SequelizeCli-blue?style=for-the-badge"/>
+* <img src="https://img.shields.io/badge/Dependência-SwaggerJsdoc-blue?style=for-the-badge"/>
+* <img src="https://img.shields.io/badge/Dependência-SwaggerUiExpress-blue?style=for-the-badge"/>
 
 ## Instalação
 
@@ -85,6 +85,7 @@ Assim que seu servidor estiver rodando, você pode ir em localhost:3001/api-docs
 <img src="./assets/swagger/put.PNG"/>
 <p>DELETE:</p>
 <img src="./assets/swagger/delete.PNG"/>
+
 ---
 
 ## Autores
